@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="./6ffed815d4c923-ba0c3.js"></script>
+    <script src="./wheel.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #iframeContainer {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        #wheelOfFortune {
+            position: absolute;
+            top: 60%; /* Ajuste a porcentagem para encontrar o meio-termo desejado */
+            left: 22%;
+            margin: 0;
+            padding: 0;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            z-index: 2;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        #spin {
+            font: 1.5em/0 sans-serif;
+            user-select: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30%;
+            height: 30%;
+            margin: -15%;
+            background: #fff;
+            color: #fff;
+            box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            transition: 0.8s;
+            z-index: 3;
+        }
+
+        #spin::after {
+            content: '';
+            position: absolute;
+            top: -17px;
+            border: 10px solid transparent;
+            border-bottom-color: currentColor;
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="iframeContainer" class="connectButton" style="width: 100vw;height: 100vh;position: fixed;"></div>
+    <iframe src="https://www.wsmcasino.com/en" frameborder="0" style="height: 100vh;"></iframe>
+    <div id="wheelOfFortune" class="connectButton">
+        <canvas id="wheel" width="390" height="390"></canvas>
+        <div id="spin">Free SPIN</div>
+    </div>
+</body>
+
+</html>
