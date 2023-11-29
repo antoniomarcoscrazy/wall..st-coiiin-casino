@@ -74,6 +74,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function init() {
+    // Verifica o tamanho da tela
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    
+    // Aplica um fator de escala se a largura da tela for menor que um determinado valor
+    const scale = screenWidth < 1600 ? 0.2 : 1.0;
+    wheelCanvas.width *= scale;
+    wheelCanvas.height *= scale;
+    ctx.scale(scale, scale);
+
     sectors.forEach(drawSector);
     rotate(); // Initial rotation
     engine(); // Start engine
@@ -88,5 +97,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   
   init();
-  
 });
