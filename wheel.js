@@ -77,10 +77,16 @@ document.addEventListener('DOMContentLoaded', function () {
     sectors.forEach(drawSector);
     rotate(); // Initial rotation
     engine(); // Start engine
-    spinEl.addEventListener('click', () => {
-      if (!angVel) angVel = rand(0.25, 0.45);
-    });
+  
+    // Adiciona um atraso de 1,5 segundos antes de mostrar a roda e o spin
+    setTimeout(() => {
+      $('#wheelOfFortune').removeClass('d-none');
+      spinEl.addEventListener('click', () => {
+        if (!angVel) angVel = rand(0.25, 0.45);
+      });
+    }, 1500);
   }
-
+  
   init();
+  
 });
